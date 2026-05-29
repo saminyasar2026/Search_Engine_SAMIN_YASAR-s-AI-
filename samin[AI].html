@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Samin Yasar's AI · Like Google & ChatGPT · Voice Enabled</title>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+    font-family: system-ui, 'Segoe UI', 'apple-system', 'Roboto', sans-serif;
+    background: #f5f7fb;
+    color: #1a202c;
+    padding: 16px;
+    }
+    .container {
+    max-width: 900px;
+    margin: 0 auto;
+    }
+    .header {
+    background: linear-gradient(135deg, #0a2540, #1a3a5f);
+    border-radius: 32px;
+    padding: 40px 28px;
+    }
+    .header__content__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+    }
+    .header__content__text {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    margin-top: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header__content">
+                <div class="header__content__title">Samin Yasar's AI</div>
+                <div class="header__content__text">Like Google & ChatGPT · Voice Enabled</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title> Open ai• Like Google & ChatGPT • Voice Enabled</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, 'Segoe UI', -apple-system, 'Roboto', sans-serif;
+            background: #f5f7fb;
+            color: #1a202c;
+            padding: 16px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #0a2540, #1a3a5f);
+            border-radius: 32px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 1.8rem;
+        }
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        .chat-container {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 70vh;
+        }
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #ffffff;
+        }
+        .message {
+            display: flex;
+            margin-bottom: 16px;
+        }
+        .message.user {
+            justify-content: flex-end;
+        }
+        .message-content {
+            max-width: 80%;
+            padding: 12px 18px;
+            border-radius: 24px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .message.user .message-content {
+            background: #0a66b9;
+            color: white;
+            border-bottom-right-radius: 6px;
+        }
+        .message.bot .message-content {
+            background: #eef2f6;
+            color: #1a202c;
+            border-bottom-left-radius: 6px;
+        }
+        .input-area {
+            display: flex;
+            gap: 10px;
+            padding: 16px;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            flex-wrap: wrap;
+        }
+        input {
+            flex: 1;
+            padding: 12px 18px;
+            border: 1px solid #cbd5e1;
+            border-radius: 40px;
+            font-size: 1rem;
+            outline: none;
+            background: white;
+        }
+        button {
+            background: #0a66b9;
+            border: none;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        button:hover {
+            background: #084c8f;
+        }
+        .voice-btn {
+            background: #e53e3e;
+        }
+        .voice-btn:hover {
+            background: #c53030;
+        }
+        .voice-btn.mic-active {
+            animation: pulse 0.8s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 #e53e3e; }
+            70% { box-shadow: 0 0 0 10px rgba(229,62,62,0); }
+            100% { box-shadow: 0 0 0 0 rgba(229,62,62,0); }
+        }
+        .status {
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 6px;
+            color: #4a5568;
+        }
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 10px 16px;
+            background: #f1f5f9;
+            border-top: 1px solid #e2e8f0;
+        }
+        .suggestion-chip {
+            background: #e2e8f0;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        .suggestion-chip:hover {
+            background: #cbd5e1;
+        }
+        .answer-heading {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #0a2540;
+        }
+        .answer-section {
+            margin-top: 12px;
+        }
+        .answer-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 12px 0 6px;
+            color: #2c5282;
+        }
+        .answer-paragraph {
+            margin-bottom: 10px;
+        }
+        .answer-list {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        hr {
+            margin: 12px 0;
+            border-color: #e2e8f0;
+        }
+        .source-note {
+            font-size: 0.7rem;
+            color: #718096;
+            margin-top: 12px;
+            text-align: right;
+        }
+        .typing {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #eef2f6;
+            border-radius: 24px;
+            width: fit-content;
+        }
+        .typing span {
+            width: 8px;
+            height: 8px;
+            background: #718096;
+            border-radius: 50%;
+            animation: bounce 1.2s infinite;
+        }
+        .typing span:nth-child(2) { animation-delay: 0.2s; }
+        .typing span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-6px); }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🔍 Intelligent Search AI</h1>
+        <div class="badge">🎤 Voice • Like Google & ChatGPT • Real Answers</div>
+    </div>
+    <div class="chat-container">
+        <div class="messages" id="messagesArea">
+            <div class="message bot">
+                <div class="message-content">👋 Hello! I am your AI search assistant. Ask me anything — I will give you a detailed, article‑style answer just like Google. Click the 🎤 button and speak your question, or type it below.</div>
+            </div>
+        </div>
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Ask about any topic: Dhaka, Google, AI, history, science..." autocomplete="off">
+            <button id="sendBtn" onclick="sendQuery()">📤 Search</button>
+            <button id="voiceBtn" class="voice-btn" onclick="startVoiceSearch()">🎤 Speak</button>
+            <button id="ttsBtn" onclick="toggleTTS()" style="background:#2c7a47;">🔊 TTS ON</button>
+        </div>
+        <div class="status" id="statusMsg"></div>
+        <div class="suggestions" id="suggestions">
+            <!-- dynamic suggestions -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // DOM elements
+    const messagesDiv = document.getElementById('messagesArea');
+    const userInput = document.getElementById('userInput');
+    const statusSpan = document.getElementById('statusMsg');
+    let ttsEnabled = true;
+    let speechSynth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    // Helper: add message to chat
+    function addMessage(role, htmlContent) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${role}`;
+        msgDiv.innerHTML = `<div class="message-content">${htmlContent}</div>`;
+        messagesDiv.appendChild(msgDiv);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    // Typing indicator
+    let typingElem = null;
+    function showTyping() {
+        if (typingElem) typingElem.remove();
+        typingElem = document.createElement('div');
+        typingElem.className = 'message bot';
+        typingElem.innerHTML = `<div class="message-content"><div class="typing"><span></span><span></span><span></span></div></div>`;
+        messagesDiv.appendChild(typingElem);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+    function hideTyping() {
+        if (typingElem) { typingElem.remove(); typingElem = null; }
+    }
+
+    // Text to Speech
+    function speakText(text) {
+        if (!ttsEnabled) return;
+        if (speechSynth) {
+            if (currentUtterance) speechSynth.cancel();
+            const cleanText = text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').substring(0, 400);
+            const utterance = new SpeechSynthesisUtterance(cleanText);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.92;
+            currentUtterance = utterance;
+            speechSynth.speak(utterance);
+        }
+    }
+
+    function toggleTTS() {
+        ttsEnabled = !ttsEnabled;
+        const btn = document.getElementById('ttsBtn');
+        btn.style.background = ttsEnabled ? "#2c7a47" : "#a0aec0";
+        btn.innerText = ttsEnabled ? "🔊 TTS ON" : "🔇 TTS OFF";
+    }
+
+    // ---------- CORE: Fetch REAL Wikipedia data and format as beautiful answer ----------
+    async function fetchWikipediaArticle(query) {
+        // First, try to get the page summary (extract)
+        const searchTerm = encodeURIComponent(query.trim());
+        const summaryUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${searchTerm}`;
+        try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 5000);
+            const res = await fetch(summaryUrl, { signal: controller.signal });
+            clearTimeout(timeout);
+            if (res.ok) {
+                const data = await res.json();
+                if (data.extract) {
+                    // We have a good extract. Also try to fetch more detailed intro?
+                    let answerHtml = `<div class="answer-heading">📖 ${data.title}</div>`;
+                    answerHtml += `<div class="answer-paragraph">${data.extract}</div>`;
+                    // Add a few key facts if available
+                    if (data.thumbnail) {
+                        // optionally show image, but not necessary
+                    }
+                    // Optionally add a "did you know" section? Not needed.
+                    return { success: true, html: answerHtml, title: data.title };
+                }
+            }
+        } catch(e) { console.log("Wikipedia summary fetch failed", e); }
+        
+        // Fallback: use search to get first result's extract
+        try {
+            const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&origin=*`;
+            const searchRes = await fetch(searchUrl);
+            const searchData = await searchRes.json();
+            if (searchData.query && searchData.query.search.length > 0) {
+                const firstTitle = searchData.query.search[0].title;
+                const pageUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(firstTitle)}`;
+                const pageRes = await fetch(pageUrl);
+                if (pageRes.ok) {
+                    const pageData = await pageRes.json();
+                    if (pageData.extract) {
+                        let answerHtml = `<div class="answer-heading">📖 ${pageData.title}</div>`;
+                        answerHtml += `<div class="answer-paragraph">${pageData.extract}</div>`;
+                        return { success: true, html: answerHtml, title: pageData.title };
+                    }
+                }
+            }
+        } catch(e) { console.log("Fallback search failed", e); }
+        
+        return { success: false, html: "" };
+    }
+
+    // For very common queries like "Google", "Dhaka" we can add extra formatting,
+    // but Wikipedia already gives great detail. We'll just use Wikipedia as the source.
+    // If Wikipedia fails, we provide a friendly message.
+    
+    async function getSmartAnswer(userQuestion) {
+        if (!userQuestion.trim()) return "Please ask a question.";
+        const lower = userQuestion.toLowerCase();
+        
+        // Greetings and small talk
+        if (lower === "hi" || lower === "hello" || lower === "hey") {
+            return "👋 Hello! I'm your AI search assistant. Ask me about any topic — from cities like Dhaka to companies like Google — and I'll fetch a detailed encyclopedia-style answer for you.";
+        }
+        if (lower.includes("how are you")) {
+            return "I'm ready to help! Just ask me anything, and I'll give you a comprehensive answer like a search engine.";
+        }
+        if (lower.includes("your name")) {
+            return "I am Intelligent Search AI — powered by Wikipedia and real-time knowledge. I'm here to provide detailed answers, just like Google or ChatGPT.";
+        }
+        
+        // Try to get Wikipedia content
+        const wikiResult = await fetchWikipediaArticle(userQuestion);
+        if (wikiResult.success) {
+            // Add a small reference note (not intrusive)
+            return wikiResult.html + `<div class="source-note">📚 Information from Wikipedia • Real, detailed answer</div>`;
+        } else {
+            // If Wikipedia fails, give a helpful response but still informative
+            return `<div class="answer-heading">🔍 About "${userQuestion}"</div>
+            <div class="answer-paragraph">I couldn't find a full Wikipedia article for that exact term. However, you can try rephrasing your question. For example, ask "What is Dhaka?" or "Tell me about Google".</div>
+            <div class="answer-paragraph">💡 Tip: Use full names or specific topics for the best results. I fetch real information from Wikipedia to give you detailed, accurate answers — just like a search engine.</div>`;
+        }
+    }
+
+    // Send user message
+    async function sendQuery() {
+        let query = userInput.value.trim();
+        if (query === "") return;
+        
+        addMessage("user", query);
+        userInput.value = "";
+        showTyping();
+        statusSpan.innerText = "🔍 Fetching detailed answer...";
+        
+        try {
+            const answerHtml = await getSmartAnswer(query);
+            hideTyping();
+            addMessage("bot", answerHtml);
+            speakText(answerHtml.replace(/<[^>]*>/g, ' ').substring(0, 450));
+            statusSpan.innerText = "";
+        } catch (err) {
+            hideTyping();
+            addMessage("bot", "Sorry, I encountered an error. Please try again.");
+            statusSpan.innerText = "Error";
+        }
+    }
+
+    // ---------- VOICE INPUT (Google-like voice search) ----------
+    let recognition = null;
+    function startVoiceSearch() {
+        const statusDiv = statusSpan;
+        if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+            statusDiv.innerText = "❌ Voice not supported in this browser. Use Chrome or Edge.";
+            return;
+        }
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        recognition = new SpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = 'en-US';
+        
+        statusDiv.innerHTML = "🎙️ Listening... speak your question 🔴";
+        const voiceBtn = document.getElementById('voiceBtn');
+        voiceBtn.classList.add('mic-active');
+        
+        recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript;
+            userInput.value = transcript;
+            statusDiv.innerHTML = "✅ Recognized: " + transcript;
+            voiceBtn.classList.remove('mic-active');
+            // Automatically search
+            sendQuery();
+        };
+        recognition.onerror = (e) => {
+            statusDiv.innerHTML = "❌ Error: " + e.error + ". Please allow microphone access.";
+            voiceBtn.classList.remove('mic-active');
+        };
+        recognition.onend = () => {
+            setTimeout(() => {
+                if (statusDiv.innerHTML.includes("Listening")) 
+                    statusDiv.innerHTML = "🎤 Click microphone to speak";
+            }, 1500);
+            voiceBtn.classList.remove('mic-active');
+        };
+        recognition.start();
+    }
+
+    // Suggestions (popular search queries)
+    function loadSuggestions() {
+        const suggestions = [
+            "Dhaka", "Google", "Artificial Intelligence", "Albert Einstein", 
+            "Bangladesh", "Python programming", "Black hole", "World War II"
+        ];
+        const container = document.getElementById('suggestions');
+        container.innerHTML = suggestions.map(s => `<span class="suggestion-chip" onclick="setSuggestion('${s.replace(/'/g, "\\'")}')">${s}</span>`).join('');
+    }
+    function setSuggestion(text) {
+        userInput.value = text;
+        sendQuery();
+    }
+
+    // Handle Enter key
+    userInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendQuery();
+    });
+    
+    // Initialize
+    loadSuggestions();
+    toggleTTS(); // ensure button state
+    window.sendQuery = sendQuery;
+    window.startVoiceSearch = startVoiceSearch;
+    window.toggleTTS = toggleTTS;
+    window.setSuggestion = setSuggestion;
+</script>
+</body>
+</html>
